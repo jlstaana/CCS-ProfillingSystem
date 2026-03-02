@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const FacultyDashboard = () => {
   const { user, logout } = useContext(AuthContext);
@@ -130,10 +130,11 @@ const FacultyDashboard = () => {
         {/* Sidebar */}
         <div className="sidebar">
           <h2>Faculty Panel</h2>
-          <a href="#courses">Courses</a>
-          <a href="#students">Students</a>
-          <a href="#analytics">Analytics</a>
-          <a href="#settings">Settings</a>
+          <Link to="/faculty-dashboard/faculty-info">Faculty Info</Link>
+          <Link to="/faculty-dashboard/instruction">Instruction</Link>
+          <Link to="/faculty-dashboard/scheduling">Scheduling</Link>
+          <Link to="/faculty-dashboard/events">Events</Link>
+          <Link to="/faculty-dashboard/search">Search/Filter</Link>
         </div>
 
         {/* Main Content */}
@@ -144,21 +145,25 @@ const FacultyDashboard = () => {
           </div>
 
           <div className="cards">
-            <div className="card" id="courses">
-              <h3>Courses</h3>
-              <p>Manage your courses, create assignments, and update content.</p>
+            <div className="card">
+              <h3>Faculty Information</h3>
+              <p>Update your profile, qualifications and availability.</p>
             </div>
-            <div className="card" id="students">
-              <h3>Students</h3>
-              <p>View enrolled students, track progress, and contact them.</p>
+            <div className="card">
+              <h3>Instruction</h3>
+              <p>Upload syllabi, lessons and curriculum materials.</p>
             </div>
-            <div className="card" id="analytics">
-              <h3>Analytics</h3>
-              <p>Monitor performance metrics and classroom analytics.</p>
+            <div className="card">
+              <h3>Scheduling</h3>
+              <p>Assign courses, rooms, sections and manage timetable.</p>
             </div>
-            <div className="card" id="settings">
-              <h3>Settings</h3>
-              <p>Update profile, change password, and manage notifications.</p>
+            <div className="card">
+              <h3>Events</h3>
+              <p>Organize curricular and extra‑curricular events.</p>
+            </div>
+            <div className="card">
+              <h3>Search / Filter</h3>
+              <p>Run searches across students, courses, schedules.</p>
             </div>
           </div>
         </div>

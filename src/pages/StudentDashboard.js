@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const StudentDashboard = () => {
   const { user, logout } = useContext(AuthContext);
@@ -130,10 +130,11 @@ const StudentDashboard = () => {
         {/* Sidebar */}
         <div className="sidebar">
           <h2>Student Panel</h2>
-          <a href="#courses">Courses</a>
-          <a href="#grades">Grades</a>
-          <a href="#schedule">Schedule</a>
-          <a href="#resources">Resources</a>
+          <Link to="/student-dashboard/student-info">Student Info</Link>
+          <Link to="/student-dashboard/instruction">Instruction</Link>
+          <Link to="/student-dashboard/scheduling">Scheduling</Link>
+          <Link to="/student-dashboard/events">Events</Link>
+          <Link to="/student-dashboard/search">Search/Filter</Link>
         </div>
 
         {/* Main Content */}
@@ -144,21 +145,25 @@ const StudentDashboard = () => {
           </div>
 
           <div className="cards">
-            <div className="card" id="courses">
-              <h3>Courses</h3>
-              <p>View your enrolled courses and access course materials.</p>
+            <div className="card">
+              <h3>Student Information</h3>
+              <p>Review your profile, enrollment, and academic history.</p>
             </div>
-            <div className="card" id="grades">
-              <h3>Grades</h3>
-              <p>Check your grades and track academic progress.</p>
+            <div className="card">
+              <h3>Instruction</h3>
+              <p>See your course syllabus, lessons and curriculum details.</p>
             </div>
-            <div className="card" id="schedule">
-              <h3>Schedule</h3>
-              <p>View your class schedule and upcoming events.</p>
+            <div className="card">
+              <h3>Scheduling</h3>
+              <p>Check class timings, rooms and lab schedules.</p>
             </div>
-            <div className="card" id="resources">
-              <h3>Resources</h3>
-              <p>Access university resources, libraries, and support materials.</p>
+            <div className="card">
+              <h3>Events</h3>
+              <p>Browse curricular and extra‑curricular events.</p>
+            </div>
+            <div className="card">
+              <h3>Search / Filter</h3>
+              <p>Lookup courses, faculty or schedules with custom filters.</p>
             </div>
           </div>
         </div>
